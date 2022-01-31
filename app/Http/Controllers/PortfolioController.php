@@ -39,10 +39,11 @@ class PortfolioController extends Controller
     public function store(Request $request)
 
     {
+    // return $request->name;
 
         try{
             Portfolio::create([
-                'name'=>['en'=>$request->name_en,'ar'=>$request->name],
+                'name'=>['ar'=>$request->name,'en'=>$request->name_en],
                'description'=>$request->description,
             ]);
 

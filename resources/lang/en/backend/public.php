@@ -1,6 +1,10 @@
 <?php
 
 return [
-    'Dashboard' => 'Dashboard'
+    'Dashboard' => 'Dashboard',
+    'content'=>'content',
+    'Home'=>'Home',
+
+
 ];
 ?>

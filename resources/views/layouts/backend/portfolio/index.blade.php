@@ -1,13 +1,6 @@
 @extends('layouts.backend.master')
 @section('title')Portfolio @endsection
-@section('css')
-<style>
-    .btn-primary{
-        /* background-color: yellow; */
-    }
-</style>
 
-@endsection
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -28,10 +21,10 @@
     </div>
 
 <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Bordered Table</h3>
+    <div class="card-header d-flex justify-content-between">
+      <h3 class="card-title">{{ trans('backend/sidebar.Bordered Table') }}</h3>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Add PortFolio category
+        {{ trans('backend/sidebar.Add PortFolio category') }}
       </button>
     </div>
     <!-- /.card-header -->
@@ -41,9 +34,9 @@
           <tr>
               {{$portfolio}}
             <th style="width: 10px">#</th>
-            <th >Name</th>
-            <th >Description</th>
-            <th style="width: 40px">Action</th>
+            <th >{{ trans('backend/sidebar.Name') }}</th>
+            <th >{{ trans('backend/sidebar.Description') }}</th>
+            <th style="width: 40px">{{ trans('backend/sidebar.Action') }}</th>
           </tr>
         </thead>
         <tbody>
