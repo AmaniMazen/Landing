@@ -32,7 +32,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-              {{$portfolio}}
+              
             <th style="width: 10px">#</th>
             <th >{{ trans('backend/sidebar.Name') }}</th>
             <th >{{ trans('backend/sidebar.Description') }}</th>
