@@ -2,10 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
-
-
-
-
+use App\Models\Portfolio;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +14,19 @@ use App\Http\Controllers\PortfolioController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-{
-	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/dashboard', function () {
-        return view('layouts.backend.index');
-    })->name('dashboard');
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 
-   Route::resource('portfolio',PortfolioController::class);
-});
-
-
-
+        Route::get('/dashboard', function () {
+                return view('layouts.backend.index');
+            })->name('dashboard');
+            Route::resource('portfolio',PortfolioController::class);
 
 
-require __DIR__.'/auth.php';
+    });
+
+
+
