@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="{{App::getLocale()=='en'? "  " : "rtl"}}">
+<html lang="en" dir="{{App::getLocale()=='en'? ' ' : 'rtl'}}">
 
 <!--   Header Section-->
 @include('layouts.backend.head')
